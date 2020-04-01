@@ -1,0 +1,51 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-642-g3bdb50da)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0000000000842550 .scope module, "or_array_tb" "or_array_tb" 2 3;
+ .timescale 0 0;
+v00000000001dd160_0 .var "a", 31 0;
+v00000000001dd200_0 .var "b", 31 0;
+v00000000001dd2a0_0 .net "out", 31 0, L_0000000000870d20;  1 drivers
+S_00000000008426e0 .scope module, "A" "or_array" 2 7, 3 1 0, S_0000000000842550;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 32 "out";
+    .port_info 1 /INPUT 32 "a";
+    .port_info 2 /INPUT 32 "b";
+L_0000000000876b50 .functor OR 32, v00000000001dd160_0, v00000000001dd200_0, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>;
+v0000000000842870_0 .net *"_s2", 31 0, L_0000000000876b50;  1 drivers
+v0000000000842910_0 .net "a", 31 0, v00000000001dd160_0;  1 drivers
+v00000000001d92c0_0 .net "b", 31 0, v00000000001dd200_0;  1 drivers
+v00000000001dd0c0_0 .net "out", 31 0, L_0000000000870d20;  alias, 1 drivers
+L_0000000000870d20 .part L_0000000000876b50, 0, 32;
+    .scope S_0000000000842550;
+T_0 ;
+    %vpi_call 2 10 "$monitor", "o = %32b \012a = %32b \012b = %32b \012-------\012", v00000000001dd2a0_0, v00000000001dd160_0, v00000000001dd200_0 {0 0 0};
+    %pushi/vec4 94836458, 0, 32;
+    %store/vec4 v00000000001dd160_0, 0, 32;
+    %pushi/vec4 4534534, 0, 32;
+    %store/vec4 v00000000001dd200_0, 0, 32;
+    %delay 5, 0;
+    %pushi/vec4 26483645, 0, 32;
+    %store/vec4 v00000000001dd160_0, 0, 32;
+    %pushi/vec4 987654, 0, 32;
+    %store/vec4 v00000000001dd200_0, 0, 32;
+    %delay 5, 0;
+    %pushi/vec4 3456, 0, 32;
+    %store/vec4 v00000000001dd160_0, 0, 32;
+    %pushi/vec4 76348754, 0, 32;
+    %store/vec4 v00000000001dd200_0, 0, 32;
+    %vpi_call 2 16 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "or_array_tb.v";
+    "./or_array.v";

@@ -1,0 +1,66 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-642-g3bdb50da)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_000000000099b540 .scope module, "testbench" "testbench" 2 12;
+ .timescale 0 0;
+v0000000000842ae0_0 .var "a", 0 0;
+v0000000000842b80_0 .var "b", 0 0;
+v0000000000842c20_0 .net "f", 0 0, L_0000000000842eb0;  1 drivers
+v0000000000842cc0_0 .var "s", 0 0;
+S_000000000099e170 .scope module, "mux_gate" "mux2to1_gate" 2 15, 2 1 0, S_000000000099b540;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "s";
+    .port_info 3 /OUTPUT 1 "f";
+L_0000000000842d60 .functor NOT 1, v0000000000842cc0_0, C4<0>, C4<0>, C4<0>;
+L_0000000000842dd0 .functor AND 1, v0000000000842ae0_0, v0000000000842cc0_0, C4<1>, C4<1>;
+L_0000000000842e40 .functor AND 1, v0000000000842b80_0, L_0000000000842d60, C4<1>, C4<1>;
+L_0000000000842eb0 .functor OR 1, L_0000000000842dd0, L_0000000000842e40, C4<0>, C4<0>;
+v000000000099b6d0_0 .net "a", 0 0, v0000000000842ae0_0;  1 drivers
+v00000000008433e0_0 .net "b", 0 0, v0000000000842b80_0;  1 drivers
+v000000000099cef0_0 .net "c", 0 0, L_0000000000842dd0;  1 drivers
+v000000000099e300_0 .net "d", 0 0, L_0000000000842e40;  1 drivers
+v000000000099e3a0_0 .net "e", 0 0, L_0000000000842d60;  1 drivers
+v000000000099e440_0 .net "f", 0 0, L_0000000000842eb0;  alias, 1 drivers
+v000000000099e4e0_0 .net "s", 0 0, v0000000000842cc0_0;  1 drivers
+    .scope S_000000000099b540;
+T_0 ;
+    %vpi_call 2 18 "$monitor", " ", $time, " a=%b , b=%b , s=%b , f=%b", v0000000000842ae0_0, v0000000000842b80_0, v0000000000842cc0_0, v0000000000842c20_0 {0 0 0};
+    %delay 0, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000842ae0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000842b80_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000842cc0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000842cc0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000842ae0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000842b80_0, 0, 1;
+    %delay 15, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000842cc0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000842cc0_0, 0, 1;
+    %delay 100, 0;
+    %vpi_call 2 25 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "mux2to1_gate.v";

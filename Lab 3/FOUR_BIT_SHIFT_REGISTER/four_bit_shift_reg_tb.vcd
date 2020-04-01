@@ -1,0 +1,58 @@
+$date
+	Mon Oct 28 18:06:07 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module shiftregtest $end
+$var wire 4 ! Q [3:0] $end
+$var reg 1 " CLK $end
+$var reg 1 # EN $end
+$var reg 1 $ in $end
+$scope module shreg $end
+$var wire 1 " CLK $end
+$var wire 1 # EN $end
+$var wire 1 $ in $end
+$var wire 4 % init [3:0] $end
+$var reg 4 & Q [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 &
+bz %
+0$
+0#
+0"
+b0 !
+$end
+#2
+1"
+#4
+0"
+1#
+1$
+#6
+b1000 !
+b1000 &
+1"
+#8
+0"
+0#
+#10
+1"
+#12
+0"
+1#
+0$
+#14
+b100 !
+b100 &
+1"
+#16
+0"
+#17

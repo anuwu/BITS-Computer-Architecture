@@ -1,0 +1,131 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0096b7d8 .scope module, "testbench" "testbench" 2 11;
+ .timescale 0 0;
+v02917530_0 .var "b0", 0 0;
+v02917320_0 .var "b1", 0 0;
+v02917428_0 .var "b2", 0 0;
+v02917378_0 .var "b3", 0 0;
+v02917588_0 .net "g0", 0 0, L_02918f00;  1 drivers
+v02917110_0 .net "g1", 0 0, L_029192a8;  1 drivers
+v02917168_0 .net "g2", 0 0, L_0096c3d0;  1 drivers
+v02916c98_0 .net "g3", 0 0, L_0096c148;  1 drivers
+S_00969608 .scope module, "btgdf" "bcdtogray_df" 2 14, 2 1 0, S_0096b7d8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "b3"
+    .port_info 1 /INPUT 1 "b2"
+    .port_info 2 /INPUT 1 "b1"
+    .port_info 3 /INPUT 1 "b0"
+    .port_info 4 /OUTPUT 1 "g3"
+    .port_info 5 /OUTPUT 1 "g2"
+    .port_info 6 /OUTPUT 1 "g1"
+    .port_info 7 /OUTPUT 1 "g0"
+L_0096c148 .functor BUFZ 1, v02917378_0, C4<0>, C4<0>, C4<0>;
+L_0096c388 .functor NOT 1, v02917428_0, C4<0>, C4<0>, C4<0>;
+L_0096bf50 .functor AND 1, v02917378_0, L_0096c388, C4<1>, C4<1>;
+L_0096c190 .functor NOT 1, v02917378_0, C4<0>, C4<0>, C4<0>;
+L_0096c1d8 .functor AND 1, L_0096c190, v02917428_0, C4<1>, C4<1>;
+L_0096c3d0 .functor OR 1, L_0096bf50, L_0096c1d8, C4<0>, C4<0>;
+L_0096c538 .functor NOT 1, v02917320_0, C4<0>, C4<0>, C4<0>;
+L_0096c460 .functor AND 1, v02917428_0, L_0096c538, C4<1>, C4<1>;
+L_0096bda0 .functor NOT 1, v02917428_0, C4<0>, C4<0>, C4<0>;
+L_0096be30 .functor AND 1, L_0096bda0, v02917320_0, C4<1>, C4<1>;
+L_029192a8 .functor OR 1, L_0096c460, L_0096be30, C4<0>, C4<0>;
+L_02918e28 .functor NOT 1, v02917530_0, C4<0>, C4<0>, C4<0>;
+L_02918e70 .functor AND 1, v02917320_0, L_02918e28, C4<1>, C4<1>;
+L_02919260 .functor NOT 1, v02917320_0, C4<0>, C4<0>, C4<0>;
+L_02919020 .functor AND 1, L_02919260, v02917530_0, C4<1>, C4<1>;
+L_02918f00 .functor OR 1, L_02918e70, L_02919020, C4<0>, C4<0>;
+v00969020_0 .net *"_s12", 0 0, L_0096c538;  1 drivers
+v00968f18_0 .net *"_s14", 0 0, L_0096c460;  1 drivers
+v00969078_0 .net *"_s16", 0 0, L_0096bda0;  1 drivers
+v009690d0_0 .net *"_s18", 0 0, L_0096be30;  1 drivers
+v00968f70_0 .net *"_s2", 0 0, L_0096c388;  1 drivers
+v00968ec0_0 .net *"_s22", 0 0, L_02918e28;  1 drivers
+v00969128_0 .net *"_s24", 0 0, L_02918e70;  1 drivers
+v00968db8_0 .net *"_s26", 0 0, L_02919260;  1 drivers
+v02916fb0_0 .net *"_s28", 0 0, L_02919020;  1 drivers
+v02917480_0 .net *"_s4", 0 0, L_0096bf50;  1 drivers
+v02917008_0 .net *"_s6", 0 0, L_0096c190;  1 drivers
+v02916da0_0 .net *"_s8", 0 0, L_0096c1d8;  1 drivers
+v02917060_0 .net "b0", 0 0, v02917530_0;  1 drivers
+v02916f58_0 .net "b1", 0 0, v02917320_0;  1 drivers
+v029174d8_0 .net "b2", 0 0, v02917428_0;  1 drivers
+v02916ea8_0 .net "b3", 0 0, v02917378_0;  1 drivers
+v02916cf0_0 .net "g0", 0 0, L_02918f00;  alias, 1 drivers
+v02916f00_0 .net "g1", 0 0, L_029192a8;  alias, 1 drivers
+v029170b8_0 .net "g2", 0 0, L_0096c3d0;  alias, 1 drivers
+v02916d48_0 .net "g3", 0 0, L_0096c148;  alias, 1 drivers
+    .scope S_0096b7d8;
+T_0 ;
+    %vpi_call 2 17 "$monitor", " ", $time, " b3=%b, b2=%b, b1=%b, b0=%b, g3=%b, g2=%b, g1=%b, g0=%b", v02917378_0, v02917428_0, v02917320_0, v02917530_0, v02916c98_0, v02917168_0, v02917110_0, v02917588_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02917378_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02917428_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02917320_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02917530_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02917530_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02917320_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02917530_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02917530_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02917428_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02917320_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02917530_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02917530_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02917320_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02917530_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02917530_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02917428_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02917320_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02917530_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02917378_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02917428_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02917320_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v02917530_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v02917530_0, 0, 1;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "bcdtogray_df.v";

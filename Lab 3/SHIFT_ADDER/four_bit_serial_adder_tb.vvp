@@ -1,0 +1,177 @@
+#! /usr/local/iverilog/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-642-g3bdb50da)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_000000000092eb50 .scope module, "four_bit_serial_adder" "four_bit_serial_adder" 2 10;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 4 "A";
+    .port_info 1 /OUTPUT 4 "B";
+    .port_info 2 /OUTPUT 1 "carryQ";
+    .port_info 3 /INPUT 1 "shift";
+    .port_info 4 /INPUT 1 "serial_in";
+    .port_info 5 /INPUT 1 "carry_rst";
+    .port_info 6 /INPUT 1 "clk";
+P_000000000110a380 .param/l "n" 0 2 11, +C4<00000000000000000000000000000100>;
+o000000000111d528 .functor BUFZ 1, C4<z>; HiZ drive
+o000000000111d558 .functor BUFZ 1, C4<z>; HiZ drive
+L_0000000001109340 .functor AND 1, o000000000111d528, o000000000111d558, C4<1>, C4<1>;
+v0000000001169360_0 .net "A", 3 0, v0000000001168000_0;  1 drivers
+v0000000001167ce0_0 .net "B", 3 0, v0000000001167ec0_0;  1 drivers
+v0000000001168640_0 .net "carry", 0 0, L_0000000001169c10;  1 drivers
+v0000000001169220_0 .net "carryQ", 0 0, v0000000001168140_0;  1 drivers
+o000000000111d408 .functor BUFZ 1, C4<z>; HiZ drive
+v0000000001168780_0 .net "carry_rst", 0 0, o000000000111d408;  0 drivers
+v0000000001168960_0 .net "clk", 0 0, o000000000111d528;  0 drivers
+v00000000011679c0_0 .net "clk_shift", 0 0, L_0000000001109340;  1 drivers
+o000000000111d6a8 .functor BUFZ 1, C4<z>; HiZ drive
+v0000000001168820_0 .net "serial_in", 0 0, o000000000111d6a8;  0 drivers
+v0000000001168320_0 .net "shift", 0 0, o000000000111d558;  0 drivers
+v00000000011680a0_0 .net "sum", 0 0, L_000000000116a1c0;  1 drivers
+L_00000000011681e0 .part v0000000001168000_0, 0, 1;
+L_0000000001168a00 .part v0000000001167ec0_0, 0, 1;
+S_000000000092ece0 .scope module, "FA" "full_adder" 2 24, 3 1 0, S_000000000092eb50;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "s";
+    .port_info 1 /OUTPUT 1 "cout";
+    .port_info 2 /INPUT 1 "a";
+    .port_info 3 /INPUT 1 "b";
+    .port_info 4 /INPUT 1 "cin";
+L_0000000001109110 .functor NOT 1, L_0000000001168a00, C4<0>, C4<0>, C4<0>;
+L_00000000011095e0 .functor AND 1, L_00000000011681e0, L_0000000001109110, C4<1>, C4<1>;
+L_00000000011093b0 .functor NOT 1, L_00000000011681e0, C4<0>, C4<0>, C4<0>;
+L_0000000001109420 .functor AND 1, L_00000000011093b0, L_0000000001168a00, C4<1>, C4<1>;
+L_0000000001109490 .functor OR 1, L_00000000011095e0, L_0000000001109420, C4<0>, C4<0>;
+L_0000000001109500 .functor NOT 1, L_0000000001109490, C4<0>, C4<0>, C4<0>;
+L_0000000001109570 .functor AND 1, v0000000001168140_0, L_0000000001109500, C4<1>, C4<1>;
+L_0000000001169900 .functor NOT 1, v0000000001168140_0, C4<0>, C4<0>, C4<0>;
+L_000000000116a310 .functor AND 1, L_0000000001169900, L_0000000001109490, C4<1>, C4<1>;
+L_000000000116a1c0 .functor OR 1, L_0000000001109570, L_000000000116a310, C4<0>, C4<0>;
+L_000000000116a4d0 .functor AND 1, L_00000000011681e0, L_0000000001168a00, C4<1>, C4<1>;
+L_0000000001169ba0 .functor AND 1, L_00000000011681e0, v0000000001168140_0, C4<1>, C4<1>;
+L_000000000116a230 .functor OR 1, L_000000000116a4d0, L_0000000001169ba0, C4<0>, C4<0>;
+L_000000000116a150 .functor AND 1, L_0000000001168a00, v0000000001168140_0, C4<1>, C4<1>;
+L_0000000001169c10 .functor OR 1, L_000000000116a230, L_000000000116a150, C4<0>, C4<0>;
+v000000000110b1b0_0 .net *"_s0", 0 0, L_0000000001109110;  1 drivers
+v000000000110b250_0 .net *"_s10", 0 0, L_0000000001109500;  1 drivers
+v000000000110a990_0 .net *"_s12", 0 0, L_0000000001109570;  1 drivers
+v000000000110b430_0 .net *"_s14", 0 0, L_0000000001169900;  1 drivers
+v000000000110b570_0 .net *"_s16", 0 0, L_000000000116a310;  1 drivers
+v000000000110b2f0_0 .net *"_s2", 0 0, L_00000000011095e0;  1 drivers
+v000000000110b6b0_0 .net *"_s20", 0 0, L_000000000116a4d0;  1 drivers
+v000000000110b390_0 .net *"_s22", 0 0, L_0000000001169ba0;  1 drivers
+v000000000110b750_0 .net *"_s24", 0 0, L_000000000116a230;  1 drivers
+v000000000110aad0_0 .net *"_s26", 0 0, L_000000000116a150;  1 drivers
+v000000000110b7f0_0 .net *"_s4", 0 0, L_00000000011093b0;  1 drivers
+v000000000110aa30_0 .net *"_s6", 0 0, L_0000000001109420;  1 drivers
+v000000000110ab70_0 .net "a", 0 0, L_00000000011681e0;  1 drivers
+v000000000110ac10_0 .net "b", 0 0, L_0000000001168a00;  1 drivers
+v00000000011692c0_0 .net "cin", 0 0, v0000000001168140_0;  alias, 1 drivers
+v0000000001168c80_0 .net "cout", 0 0, L_0000000001169c10;  alias, 1 drivers
+v0000000001168dc0_0 .net "s", 0 0, L_000000000116a1c0;  alias, 1 drivers
+v00000000011685a0_0 .net "x1", 0 0, L_0000000001109490;  1 drivers
+S_00000000010e2660 .scope module, "dff" "dff_async" 2 23, 4 1 0, S_000000000092eb50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "d";
+    .port_info 1 /INPUT 1 "clearb";
+    .port_info 2 /INPUT 1 "clock";
+    .port_info 3 /OUTPUT 1 "q";
+v0000000001167d80_0 .net "clearb", 0 0, o000000000111d408;  alias, 0 drivers
+v0000000001167f60_0 .net "clock", 0 0, L_0000000001109340;  alias, 1 drivers
+v0000000001168280_0 .net "d", 0 0, L_0000000001169c10;  alias, 1 drivers
+v0000000001168140_0 .var "q", 0 0;
+E_000000000110a140/0 .event negedge, v0000000001167d80_0;
+E_000000000110a140/1 .event posedge, v0000000001167f60_0;
+E_000000000110a140 .event/or E_000000000110a140/0, E_000000000110a140/1;
+S_00000000010e27f0 .scope module, "srA" "reg1" 2 21, 5 1 0, S_000000000092eb50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "EN";
+    .port_info 1 /INPUT 1 "in";
+    .port_info 2 /INPUT 1 "CLK";
+    .port_info 3 /OUTPUT 4 "Q";
+P_000000000110a1c0 .param/l "n" 0 5 2, +C4<00000000000000000000000000000100>;
+v00000000011686e0_0 .net "CLK", 0 0, o000000000111d528;  alias, 0 drivers
+v0000000001168e60_0 .net "EN", 0 0, o000000000111d558;  alias, 0 drivers
+v0000000001168000_0 .var "Q", 3 0;
+v0000000001168aa0_0 .net "in", 0 0, L_000000000116a1c0;  alias, 1 drivers
+E_0000000001109bc0 .event posedge, v00000000011686e0_0;
+S_0000000001115b60 .scope module, "srB" "reg2" 2 22, 6 1 0, S_000000000092eb50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "EN";
+    .port_info 1 /INPUT 1 "in";
+    .port_info 2 /INPUT 1 "CLK";
+    .port_info 3 /OUTPUT 4 "Q";
+P_0000000001109c40 .param/l "n" 0 6 2, +C4<00000000000000000000000000000100>;
+v00000000011688c0_0 .net "CLK", 0 0, o000000000111d528;  alias, 0 drivers
+v0000000001169400_0 .net "EN", 0 0, o000000000111d558;  alias, 0 drivers
+v0000000001167ec0_0 .var "Q", 3 0;
+v0000000001168d20_0 .net "in", 0 0, o000000000111d6a8;  alias, 0 drivers
+    .scope S_00000000010e27f0;
+T_0 ;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0000000001168000_0, 0, 4;
+    %end;
+    .thread T_0;
+    .scope S_00000000010e27f0;
+T_1 ;
+    %wait E_0000000001109bc0;
+    %load/vec4 v0000000001168e60_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.0, 8;
+    %load/vec4 v0000000001168aa0_0;
+    %load/vec4 v0000000001168000_0;
+    %parti/s 3, 1, 2;
+    %concat/vec4; draw_concat_vec4
+    %store/vec4 v0000000001168000_0, 0, 4;
+T_1.0 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0000000001115b60;
+T_2 ;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0000000001167ec0_0, 0, 4;
+    %end;
+    .thread T_2;
+    .scope S_0000000001115b60;
+T_3 ;
+    %wait E_0000000001109bc0;
+    %load/vec4 v0000000001169400_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.0, 8;
+    %load/vec4 v0000000001168d20_0;
+    %load/vec4 v0000000001167ec0_0;
+    %parti/s 3, 1, 2;
+    %concat/vec4; draw_concat_vec4
+    %store/vec4 v0000000001167ec0_0, 0, 4;
+T_3.0 ;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_00000000010e2660;
+T_4 ;
+    %wait E_000000000110a140;
+    %load/vec4 v0000000001167d80_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_4.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0000000001168140_0, 0;
+    %jmp T_4.1;
+T_4.0 ;
+    %load/vec4 v0000000001168280_0;
+    %assign/vec4 v0000000001168140_0, 0;
+T_4.1 ;
+    %jmp T_4;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 7;
+    "N/A";
+    "<interactive>";
+    "four_bit_serial_adder.v";
+    "./full_adder.v";
+    "./..\DFF_ASYNC\dff_async.v";
+    "./reg1.v";
+    "./reg2.v";

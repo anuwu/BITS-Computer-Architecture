@@ -1,0 +1,194 @@
+$date
+	Sat Nov 09 16:49:16 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module bit32_regfile4_tb $end
+$var wire 32 ! read2 [31:0] $end
+$var wire 32 " read1 [31:0] $end
+$var reg 1 # clk $end
+$var reg 2 $ read_addr1 [1:0] $end
+$var reg 2 % read_addr2 [1:0] $end
+$var reg 1 & regwrite $end
+$var reg 1 ' rst $end
+$var reg 2 ( write_addr [1:0] $end
+$var reg 32 ) write_dat [31:0] $end
+$scope module RF4 $end
+$var wire 1 * cg0 $end
+$var wire 1 + cg1 $end
+$var wire 1 , cg2 $end
+$var wire 1 - cg3 $end
+$var wire 1 # clk $end
+$var wire 2 . read_addr1 [1:0] $end
+$var wire 2 / read_addr2 [1:0] $end
+$var wire 1 & regwrite $end
+$var wire 1 ' rst $end
+$var wire 2 0 write_addr [1:0] $end
+$var wire 32 1 write_dat [31:0] $end
+$var wire 32 2 read2 [31:0] $end
+$var wire 32 3 read1 [31:0] $end
+$var wire 4 4 dec_out [3:0] $end
+$var wire 32 5 dat3 [31:0] $end
+$var wire 32 6 dat2 [31:0] $end
+$var wire 32 7 dat1 [31:0] $end
+$var wire 32 8 dat0 [31:0] $end
+$scope module dec $end
+$var wire 2 9 in [1:0] $end
+$var reg 4 : out [3:0] $end
+$upscope $end
+$scope module mr1 $end
+$var wire 2 ; sel [1:0] $end
+$var wire 32 < in3 [31:0] $end
+$var wire 32 = in2 [31:0] $end
+$var wire 32 > in1 [31:0] $end
+$var wire 32 ? in0 [31:0] $end
+$var reg 32 @ out [31:0] $end
+$upscope $end
+$scope module mr2 $end
+$var wire 2 A sel [1:0] $end
+$var wire 32 B in3 [31:0] $end
+$var wire 32 C in2 [31:0] $end
+$var wire 32 D in1 [31:0] $end
+$var wire 32 E in0 [31:0] $end
+$var reg 32 F out [31:0] $end
+$upscope $end
+$scope module r0 $end
+$var wire 1 * clk $end
+$var wire 32 G inp [31:0] $end
+$var wire 1 ' rst $end
+$var reg 32 H dat [31:0] $end
+$upscope $end
+$scope module r1 $end
+$var wire 1 + clk $end
+$var wire 32 I inp [31:0] $end
+$var wire 1 ' rst $end
+$var reg 32 J dat [31:0] $end
+$upscope $end
+$scope module r2 $end
+$var wire 1 , clk $end
+$var wire 32 K inp [31:0] $end
+$var wire 1 ' rst $end
+$var reg 32 L dat [31:0] $end
+$upscope $end
+$scope module r3 $end
+$var wire 1 - clk $end
+$var wire 32 M inp [31:0] $end
+$var wire 1 ' rst $end
+$var reg 32 N dat [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx N
+bx M
+bx L
+bx K
+bx J
+bx I
+bx H
+bx G
+bx F
+bx E
+bx D
+bx C
+bx B
+bx A
+bx @
+bx ?
+bx >
+bx =
+bx <
+bx ;
+bx :
+bx 9
+bx 8
+bx 7
+bx 6
+bx 5
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+bx .
+0-
+0,
+0+
+0*
+bx )
+bx (
+1'
+x&
+bx %
+bx $
+0#
+bx "
+bx !
+$end
+#1
+b0 8
+b0 ?
+b0 E
+b0 H
+b0 7
+b0 >
+b0 D
+b0 J
+b0 6
+b0 =
+b0 C
+b0 L
+b0 5
+b0 <
+b0 B
+b0 N
+0'
+#2
+1'
+#5
+b1100100 8
+b1100100 ?
+b1100100 E
+b1100100 H
+b1100100 7
+b1100100 >
+b1100100 D
+b1100100 J
+b1100100 6
+b1100100 =
+b1100100 C
+b1100100 L
+b1100100 5
+b1100100 <
+b1100100 B
+b1100100 N
+b1 4
+b1 :
+1*
+0+
+0,
+0-
+b1100100 )
+b1100100 1
+b1100100 G
+b1100100 I
+b1100100 K
+b1100100 M
+b0 (
+b0 0
+b0 9
+1&
+1#
+#10
+0*
+0#
+#15
+1#
+0&

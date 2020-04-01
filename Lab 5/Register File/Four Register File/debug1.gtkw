@@ -1,0 +1,47 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Sat Nov 09 11:02:59 2019
+[*]
+[dumpfile] "E:\BITS Pilani\4-1\Acads\Computer Architecture\Labs\Lab 5\Register File\Four Register File\bit32_regfile4_tb.vcd"
+[dumpfile_mtime] "Sat Nov 09 10:50:27 2019"
+[dumpfile_size] 4045
+[savefile] "E:\BITS Pilani\4-1\Acads\Computer Architecture\Labs\Lab 5\Register File\Four Register File\debug1.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -138 -10
+*-4.675658 25 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] bit32_regfile4_tb.
+[treeopen] bit32_regfile4_tb.RF4.
+[sst_width] 197
+[signals_width] 150
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@28
+bit32_regfile4_tb.clk
+bit32_regfile4_tb.regwrite
+bit32_regfile4_tb.write_addr[1:0]
+@22
+bit32_regfile4_tb.RF4.dec.out[3:0]
+bit32_regfile4_tb.RF4.r0.dat[31:0]
+@28
+bit32_regfile4_tb.RF4.r0.clk
+@22
+bit32_regfile4_tb.RF4.r1.dat[31:0]
+@28
+bit32_regfile4_tb.RF4.r1.clk
+@22
+bit32_regfile4_tb.RF4.r2.dat[31:0]
+@29
+bit32_regfile4_tb.RF4.r2.clk
+@22
+bit32_regfile4_tb.RF4.r3.dat[31:0]
+@28
+bit32_regfile4_tb.RF4.r3.clk
+@22
+bit32_regfile4_tb.RF4.mr1.out[31:0]
+bit32_regfile4_tb.RF4.mr2.out[31:0]
+@28
+bit32_regfile4_tb.read_addr1[1:0]
+bit32_regfile4_tb.read_addr2[1:0]
+[pattern_trace] 1
+[pattern_trace] 0

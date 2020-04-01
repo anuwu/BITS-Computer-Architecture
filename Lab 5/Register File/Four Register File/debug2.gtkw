@@ -1,0 +1,88 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Sat Nov 09 11:17:46 2019
+[*]
+[dumpfile] "E:\BITS Pilani\4-1\Acads\Computer Architecture\Labs\Lab 5\Register File\Four Register File\bit32_regfile4_tb.vcd"
+[dumpfile_mtime] "Sat Nov 09 11:03:03 2019"
+[dumpfile_size] 4045
+[savefile] "E:\BITS Pilani\4-1\Acads\Computer Architecture\Labs\Lab 5\Register File\Four Register File\debug2.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -114 35
+*-3.675658 6 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] bit32_regfile4_tb.
+[treeopen] bit32_regfile4_tb.RF4.
+[sst_width] 197
+[signals_width] 227
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@28
+bit32_regfile4_tb.clk
+bit32_regfile4_tb.rst
+bit32_regfile4_tb.write_addr[1:0]
+@c00022
+bit32_regfile4_tb.RF4.dec.out[3:0]
+@28
+(0)bit32_regfile4_tb.RF4.dec.out[3:0]
+(1)bit32_regfile4_tb.RF4.dec.out[3:0]
+(2)bit32_regfile4_tb.RF4.dec.out[3:0]
+(3)bit32_regfile4_tb.RF4.dec.out[3:0]
+@1401200
+-group_end
+@22
+bit32_regfile4_tb.write_dat[31:0]
+@28
+bit32_regfile4_tb.regwrite
+@c00022
+bit32_regfile4_tb.RF4.r0.dat[31:0]
+@28
+(0)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(1)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(2)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(3)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(4)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(5)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(6)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(7)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(8)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(9)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(10)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(11)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(12)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(13)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(14)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(15)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(16)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(17)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(18)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(19)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(20)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(21)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(22)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(23)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(24)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(25)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(26)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(27)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(28)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(29)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(30)bit32_regfile4_tb.RF4.r0.dat[31:0]
+(31)bit32_regfile4_tb.RF4.r0.dat[31:0]
+@1401200
+-group_end
+@28
+bit32_regfile4_tb.RF4.r0.clk
+@22
+bit32_regfile4_tb.RF4.r1.dat[31:0]
+@28
+bit32_regfile4_tb.RF4.r1.clk
+@22
+bit32_regfile4_tb.RF4.r2.dat[31:0]
+@28
+bit32_regfile4_tb.RF4.r2.clk
+@22
+bit32_regfile4_tb.RF4.r3.dat[31:0]
+@28
+bit32_regfile4_tb.RF4.r3.clk
+[pattern_trace] 1
+[pattern_trace] 0
